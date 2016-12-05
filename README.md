@@ -13,7 +13,6 @@ Connected Component labelling is a fundamental step in a automated image analysi
       Boundary of the particular region
       Shape / Area / Boundary based features etc..
 
-![Alt text](https://drive.google.com/open?id=0BzgaHB8luhGKdzFsTUtQRFlaMlk)
 Procedure:
 Scan the image from left to right and top to bottom (Assume 4-connectivity)
 1.P be a pixel at any step in the scanning process
