@@ -1,8 +1,5 @@
-function imgaeg 
-%BW = imread('C:\Users\Adithyaanirudhha\Documents\Visual Studio 2015\Projects\ConsoleApplication2\org.png');
-%BW = imread('C:\Users\Adithyaanirudhha\OneDrive\Pictures\Documents\img pbl\New folder\images.png');
-BW = imread('C:\Users\Adithyaanirudhha\Documents\portfolio\startbootstrap-agency-gh-pages\im1.png');
-%imshow(BW);
+function imga(filename) 
+BW = imread(filename);
 if(size(BW,3) == 3)
 BW = rgb2gray(BW);
 end
@@ -20,10 +17,6 @@ p2 = BW - p1;
 img(:,:,s) = p2;
 BW = BW - p2;
 end
-for s = 1:num
-    imshow(img(:,:,s)); %= im2bw(img(:,:,s));
-end
- imshow(img(:,:,1));
 global moment00;
 global moment10;
 global moment01;
@@ -96,8 +89,6 @@ for n = 1:8
         p = 0;
         q = 0;
     end
-    %p = input(prompt1);
-    %q = input(prompt2);
     rp(n) = (p + q + 1)/2; 
 for s = 1:num
 if(p == 2 && q==0)
@@ -148,13 +139,14 @@ for i = 1 : num
 end
 for i = 1:num
 A = [inv1(i) inv2(i) inv3(i) inv4(i) inv5(i) inv6(i) inv7(i)];
-%B = [1];
-dlmwrite('dataset987.csv',A,'delimiter',',','-append');
-%dlmwrite('dataset8.csv',B,'delimiter',',','-append');
+B = [1];  %%change the value of B based on the shape
+dlmwrite('dataset1.csv',A,'delimiter',',','-append');
+dlmwrite('dataset2.csv',B,'delimiter',',','-append');
 end
-% load dataset5;
-% load dataset6;
-% 
+
+%un comment this part for using the neural networks the prior can be run of several images to obtain dataset.
+%load dataset1;
+%load dataset2; 
 % inputs = dataset5;
 % targets = dataset6;
 %  
