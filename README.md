@@ -39,3 +39,20 @@ In the second pass through the image replace each label by the label assigned to
 Region belongings of a particular pixel.
 Working:
 The input image is first labelled using the Classical Connected Component algorithm.  
+
+2.Segmentation:
+The segmentation is done on the basis of the component labelling.All the pixles with the same labels are segmented out as a single region and this region is subtracted from the original image .This process is done iterativel unti all the labels haven't been removed from the image.
+
+3.Invariant Moments:
+There are seven invariant moments proposed by hu these moments are translational,Scalar and Rotational Invariant.The program Iteratively finds all the moments for the segmented images.
+
+the moments are of nth order is defined as the summation over x and y for the values p(th moment for x) and q(th moment for y) as the powers of x and y respectively for the product of summation(x^(p)*y^(q)*I(x,y)).
+
+To make the moments translational Invariant we subtract the x and y with their mean values resulting in summation((x-mean(x))^(p)*(y - mean(y))^(q)*I(x,y))
+
+Then further these moments are divided by the based moments i.e = summation((x-mean(x))^(p)*(y - mean(y))^(q)*I(x,y))/summation(I(x,y)) brings the scalaing changes adaptablity.
+
+Then we finally calculate all the seven moments for each of the images and these moments are:
+
+These seven moments are then fed into the neural network further classifies what kind of shape it is.
+
